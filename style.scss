@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 
 $body-color: #009032;
-$bodyFont-color: #ffffff;
+$bodyFont-color: white;
+$border-color: $bodyFont-color;
 $main-font: 'Cairo', sans-serif;
 
+%active {
+    position: absolute;
+    transform: translateX(0px);
+}
+
+%notActive {
+    position: absolute;
+    transform: translateX(-1000px);
+    transition: all 0.3s ease-in-out;
+}
 
 * {
     padding: 0;
@@ -29,31 +40,88 @@ body {
         margin-top: 20px;
 
         .container {
-            border: 3px solid #ffff;
-            width: 50%;
-            height: 50%;
+            border: 3px solid $border-color;
+            width: 500px;
+            height: 400px;
 
             #click {
-                border: 1px solid black;
+                border: 1px solid $border-color;
                 width: 100px;
                 height: 30px;
                 font-size: 15px;
-                background-color: lighten($body-color, 50%);
+                color: $bodyFont-color;
+                background-color: darken($body-color, 5%);
                 border-radius: 2px;
 
                 &:hover {
                     font-weight: bold;
-                    border: 1.7px solid black;
-                    background-color: lighten($body-color, 18%);
+                    border: 1.7px solid $border-color;
+                    background-color: darken($body-color, 15%);
 
                 }
 
                 &:active {
-                    background-color: lighten($body-color, 5%);
+                    background-color: darken($body-color, 5%);
+
+                }
+            }
+
+            .congPharse-container {
+                @extend %notActive;
+                width: 450px;
+                height: 300px;
+                background-color: white;
+                margin: auto 20px;
+
+
+                &.open {
+                    @extend %active;
+                }
+
+                #pharse {
+                    @extend %notActive;
+                    color: black;
+                    font-size: 25px;
+                    margin-top: 20px;
+
+                    &.open {
+                        @extend %active;
+                    }
+                }
+
+                #close {
+                    @extend %notActive;
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    background-color: rgba(255, 255, 255, 0);
+                    border: none;
+                    font-size: 20px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.153);
+                        font-weight: bold;
+                    }
+
+                    &:active {
+                        background-color: rgba(0, 0, 0, 0.322);
+                    }
+
+                    &.open {
+                        @extend %active;
+                    }
 
                 }
             }
 
         }
     }
+
+
+    footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+
 }

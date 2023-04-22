@@ -1,4 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
+body main .container .congPharse-container #close.open, body main .container .congPharse-container #pharse.open, body main .container .congPharse-container.open {
+  position: absolute;
+  transform: translateX(0px);
+}
+
+body main .container .congPharse-container #close, body main .container .congPharse-container #pharse, body main .container .congPharse-container {
+  position: absolute;
+  transform: translateX(-1000px);
+  transition: all 0.3s ease-in-out;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,7 +18,7 @@
 
 body {
   background-color: #009032;
-  color: #ffffff;
+  color: white;
   font-family: "Cairo", sans-serif;
 }
 body header {
@@ -23,22 +34,54 @@ body main {
 }
 body main .container {
   border: 3px solid white;
-  width: 50%;
-  height: 50%;
+  width: 500px;
+  height: 400px;
 }
 body main .container #click {
-  border: 1px solid black;
+  border: 1px solid white;
   width: 100px;
   height: 30px;
   font-size: 15px;
-  background-color: #90ffb7;
+  color: white;
+  background-color: #007729;
   border-radius: 2px;
 }
 body main .container #click:hover {
   font-weight: bold;
-  border: 1.7px solid black;
-  background-color: #00ec52;
+  border: 1.7px solid white;
+  background-color: #004417;
 }
 body main .container #click:active {
-  background-color: #00aa3b;
+  background-color: #007729;
+}
+body main .container .congPharse-container {
+  width: 450px;
+  height: 300px;
+  background-color: white;
+  margin: auto 20px;
+}
+body main .container .congPharse-container #pharse {
+  color: black;
+  font-size: 25px;
+  margin-top: 20px;
+}
+body main .container .congPharse-container #close {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+body main .container .congPharse-container #close:hover {
+  background-color: rgba(0, 0, 0, 0.153);
+  font-weight: bold;
+}
+body main .container .congPharse-container #close:active {
+  background-color: rgba(0, 0, 0, 0.322);
+}
+body footer {
+  text-align: center;
+  margin-top: 20px;
 }/*# sourceMappingURL=style.css.map */
