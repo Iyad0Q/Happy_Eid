@@ -6,9 +6,9 @@ let pharse = document.querySelector("#pharse");
 
 // dom functions
 button.addEventListener("click", function() {
-    pharseContainer.classList.toggle("open");
-    closeButton.classList.toggle("open");
-    pharse.classList.toggle("open");
+    pharseContainer.classList.add("open");
+    closeButton.classList.add("open");
+    pharse.classList.add("open");
 });
 
 closeButton.addEventListener("click", function() {
@@ -16,3 +16,9 @@ closeButton.addEventListener("click", function() {
     closeButton.classList.remove("open");
 })
 
+let random = Math.floor(Math.random() * 100);
+console.log(random);
+
+let congrats = ["", "", "",
+                "", "", "",
+                "", "", ""]

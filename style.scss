@@ -44,6 +44,14 @@ body {
             width: 500px;
             height: 400px;
 
+            img {
+                height: 290px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 50px;
+            }
+
             #click {
                 border: 1px solid $border-color;
                 width: 100px;

@@ -37,6 +37,13 @@ body main .container {
   width: 500px;
   height: 400px;
 }
+body main .container img {
+  height: 290px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 50px;
+}
 body main .container #click {
   border: 1px solid white;
   width: 100px;
