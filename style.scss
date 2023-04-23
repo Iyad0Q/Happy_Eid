@@ -6,14 +6,14 @@ $border-color: $bodyFont-color;
 $main-font: 'Cairo', sans-serif;
 
 %active {
-    position: absolute;
-    transform: translateX(0px);
+    display: flex;
 }
 
 %notActive {
-    position: absolute;
-    transform: translateX(-1000px);
-    transition: all 0.3s ease-in-out;
+    display: none;
+    transition: all 0.5s ease-in-out;
+    z-index: 100;
+
 }
 
 * {
@@ -41,15 +41,17 @@ body {
 
         .container {
             border: 3px solid $border-color;
+            border-radius: 10px;
             width: 500px;
             height: 400px;
 
             img {
-                height: 290px;
+                height: 265px;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
                 margin-top: 50px;
+                z-index: -100;
             }
 
             #click {
@@ -88,6 +90,9 @@ body {
 
                 #pharse {
                     @extend %notActive;
+                    position: absolute;
+                    transform: translateX(-50%);
+                    left: 50%;
                     color: black;
                     font-size: 25px;
                     margin-top: 20px;
@@ -100,9 +105,10 @@ body {
                 #close {
                     @extend %notActive;
                     display: block;
+                    background-color: rgba(255, 255, 255, 0);
                     width: 30px;
                     height: 30px;
-                    background-color: rgba(255, 255, 255, 0);
+                    padding-left: 2%;
                     border: none;
                     font-size: 20px;
                     cursor: pointer;
@@ -130,6 +136,41 @@ body {
     footer {
         text-align: center;
         margin-top: 20px;
+    }
+
+}
+
+
+// make the website reponsive with phones
+
+@media screen and (max-width: 600px){
+
+    body {
+        h1 {
+            font-size: 25px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+    }
+
+    header {
+        max-width: 100%;
+    }
+
+    img {
+        display: none;
+    }
+
+    #close {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .container {
+        margin: auto 5px;
     }
 
 }
